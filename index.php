@@ -55,29 +55,26 @@
 
       <!-- CONTENIDO CENTRAL -->
       <div id="central">
+      <h1>Productos destacados</h1>
         <div class="product">
           <img src="assets/img/camiseta.png" alt="">
           <h2>Camiseta Azul Ancha</h2>
           <p>30 euros</p>
-          <a href="#">Comprar</a>
+          <a href="#" class="button">Comprar</a>
         </div>
-      </div>
-
-      <div id="central">
+      
         <div class="product">
           <img src="assets/img/camiseta.png" alt="">
           <h2>Camiseta Azul Ancha</h2>
           <p>30 euros</p>
-          <a href="#">Comprar</a>
+          <a href="#" class="button">Comprar</a>
         </div>
-      </div>
-
-      <div id="central">
+      
         <div class="product">
           <img src="assets/img/camiseta.png" alt="">
           <h2>Camiseta Azul Ancha</h2>
           <p>30 euros</p>
-          <a href="#">Comprar</a>
+          <a href="#" class="button">Comprar</a>
         </div>
       </div>
     </div>
