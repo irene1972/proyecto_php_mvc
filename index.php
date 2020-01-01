@@ -37,6 +37,7 @@
       <!-- BARRA LATERAL -->
       <aside id="lateral">
         <div id="login" class="block_aside">
+          <h3>Entrar a la web</h3>
           <form action="#" method="post">
             <label for="email">Email</label>
             <input type="email" name="email">
@@ -44,38 +45,40 @@
             <input type="password" name="password">
             <input type="submit" value="Enviar">
           </form>
-          <a href="#">Mis Pedidos</a>
-          <a href="#">Gestionar Pedidos</a>
-          <a href="#">Gestionar Categorías</a>
+          <ul>
+            <li><a href="#">Mis Pedidos</a></li>
+            <li><a href="#">Gestionar Pedidos</a></li>
+            <li><a href="#">Gestionar Categorías</a></li>
+          </ul>
         </div>
       </aside>
-    </div>
 
-    <!-- CONTENIDO CENTRAL -->
-    <div id="central">
-      <div class="product">
-        <img src="assets/img/camiseta.png" alt="">
-        <h2>Camiseta Azul Ancha</h2>
-        <p>30 euros</p>
-        <a href="#">Comprar</a>
+      <!-- CONTENIDO CENTRAL -->
+      <div id="central">
+        <div class="product">
+          <img src="assets/img/camiseta.png" alt="">
+          <h2>Camiseta Azul Ancha</h2>
+          <p>30 euros</p>
+          <a href="#">Comprar</a>
+        </div>
       </div>
-    </div>
 
-    <div id="central">
-      <div class="product">
-        <img src="assets/img/camiseta.png" alt="">
-        <h2>Camiseta Azul Ancha</h2>
-        <p>30 euros</p>
-        <a href="#">Comprar</a>
+      <div id="central">
+        <div class="product">
+          <img src="assets/img/camiseta.png" alt="">
+          <h2>Camiseta Azul Ancha</h2>
+          <p>30 euros</p>
+          <a href="#">Comprar</a>
+        </div>
       </div>
-    </div>
 
-    <div id="central">
-      <div class="product">
-        <img src="assets/img/camiseta.png" alt="">
-        <h2>Camiseta Azul Ancha</h2>
-        <p>30 euros</p>
-        <a href="#">Comprar</a>
+      <div id="central">
+        <div class="product">
+          <img src="assets/img/camiseta.png" alt="">
+          <h2>Camiseta Azul Ancha</h2>
+          <p>30 euros</p>
+          <a href="#">Comprar</a>
+        </div>
       </div>
     </div>
 
