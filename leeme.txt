@@ -1,0 +1,5 @@
+0. ACCESOS: 
+  http://localhost:8080/master-php/proyecto-php-poo/
+
+
+1. Nota: database inicial guardada en directorio database
