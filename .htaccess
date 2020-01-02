@@ -1,0 +1,12 @@
+<Ifmodule mod_rewrite.c>
+# Activar mod_rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost:8080/master-php/proyecto-php-poo/error/
+
+# Condición para que no podamos cargar una url que llame directamente a un directorio o a un archivo cualquiera
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# Escribimos las reglas de escritura
+Rewriterule ^(.*)/(.*) index.php?controller=$1&action=$2
+</Ifmodule>

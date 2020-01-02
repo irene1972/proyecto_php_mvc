@@ -1,5 +1,8 @@
 0. ACCESOS: 
   http://localhost:8080/master-php/proyecto-php-poo/
+  http://localhost:8080/master-php/proyecto-php-poo/index.php?controller=usuario&action=registro
+  http://localhost:8080/master-php/proyecto-php-poo/usuario/registro
+
 
 
 1. Nota: database inicial guardada en directorio database
