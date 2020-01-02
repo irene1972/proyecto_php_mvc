@@ -1,5 +1,7 @@
 <?php
   require_once 'autoload.php';
+  require_once 'views/layout/header.php';
+  require_once 'views/layout/sidebar.php';
 
   if( isset($_GET['controller']) ){
   
@@ -23,7 +25,7 @@
     echo "La página que buscas no existe";
   }
 
-
+  require_once 'views/layout/footer.php';
 
 
 ?>
