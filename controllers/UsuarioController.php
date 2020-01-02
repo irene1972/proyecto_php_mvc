@@ -67,7 +67,7 @@ class UsuarioController{
         
         $_SESSION['identity'] = $identity;
 
-        if( $identity->role == 'admin' ){
+        if( $identity->rol == 'admin' ){
           $_SESSION['admin'] = true; 
         }
 
