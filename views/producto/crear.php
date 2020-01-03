@@ -9,7 +9,7 @@
     <textarea name="descripcion"></textarea>
 
     <label for="precio">Precio</label>
-    <input type="number" name="precio" required />
+    <input type="text" name="precio" required />
 
     <label for="stock">Stock</label>
     <input type="number" name="stock" required />

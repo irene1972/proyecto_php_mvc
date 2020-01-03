@@ -16,10 +16,10 @@
 
       public function save(){
         Utils::isAdmin();
-    
+ 
         // Guardar el producto en bd
         if( isset($_POST) ){
-          if( isset($_POST['nombre']) && isset($_POST['categoria']) && isset($_POST['precio']) && isset($_POST['stock']) ){
+          if( isset($_POST['nombre']) && strlen($_POST['nombre']) > 0 && isset($_POST['categoria']) && isset($_POST['precio']) && isset($_POST['stock']) ){
       
             //var_dump($_POST);
             
@@ -58,7 +58,7 @@
         }else{
           $_SESSION['producto'] = "failed";
         }
-    
+
         header("Location:" . BASE_URL. "producto/gestion");
     
       }
