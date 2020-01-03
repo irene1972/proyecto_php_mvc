@@ -20,6 +20,7 @@
     <!-- <th>OFERTA</th> -->
     <!-- <th>IMAGEN</th> -->
     <!-- <th>FECHA</th> -->
+    <th class="th-acciones">ACCIONES</th>
   </tr>
   <?php while($prod = $productos->fetch_object()): ?>
     <tr>
@@ -32,7 +33,11 @@
       <!-- <td>< ?=$prod->oferta?></td> -->
       <!-- <td>< ?=$prod->imagen?></td> -->
       <!-- <td>< ?=$prod->fecha?></td> -->
+      <td>
+        <!-- *Nota: muuuuy importante el parámetro id no va precedido por un interrogante sino por un & -->
+        <a href="#" class="button button-gestion">Editar</a>
+        <a href="#" class="button button-gestion button-red">Eliminar</a>
+      </td>
     </tr>
   <?php endwhile; ?>
-
 </table> 

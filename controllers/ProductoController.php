@@ -93,6 +93,19 @@
         require_once 'views/producto/gestion.php';
 
       }
+
+      public function editar(){
+
+        Utils::isAdmin();
+        var_dump($_GET);
+      }
+
+      public function eliminar(){
+
+        Utils::isAdmin();
+        var_dump($_GET);
+
+      }
     
     }
 
