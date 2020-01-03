@@ -31,19 +31,39 @@
             $producto->setPrecio($_POST['precio']);
             $producto->setStock($_POST['stock']);
 
-            // CAMPOS NO OBLIGATORIOS
+            // CAMPOS NO OBLIGATORIOS:
+            // DESCRIPCION
             $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : false;
-            // $oferta = (isset($_POST['oferta'])) ? $_POST['oferta'] : false;
-            // $imagen = (isset($_POST['imagen'])) ? $_POST['imagen'] : false;
 
             if( $descripcion )
               $producto->setDescripcion($_POST['descripcion']);
 
-            // if( $oferta )
-            //   $producto->setOferta($_POST['oferta']);
+            // IMAGEN PRODUCTO
+            // SI EXISTE EL $_FILE['imagen'] y ha sido validado haremos el setImagen
+            if( isset($_FILES['imagen']) ){
 
-            // if( $imagen )
-            //   $producto->setImagen($_POST['imagen']);
+              $file = $_FILES['imagen'];
+              $file_name = $file['name'];
+              $mime_type = $file['type'];
+
+              $validated_type = ( $mime_type == 'image/jpg' || $mime_type == 'image/jpeg' || $mime_type == 'image/png' || $mime_type == 'image/gif' ) ? true : false;
+
+              if( $validated_type ){
+
+                if( !is_dir('uploads/images') ){
+                  // Nota: el parámetro true es para crear directorios recursivos!!
+                  mkdir( 'uploads/images', 0777, true );
+                }
+
+                move_uploaded_file( $file['tmp_name'], 'uploads/images/' . $file_name );
+
+                $producto->setImagen($file_name);
+
+              }else{
+                $_SESSION['producto'] = 'failed';
+              }
+
+            }
 
             $result_save = $producto->save();
             

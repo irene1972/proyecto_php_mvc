@@ -123,7 +123,17 @@
 
     public function save(){
       
-      $sql="INSERT INTO productos ( id, categoria_id, nombre, descripcion, precio, stock, oferta, fecha, imagen ) VALUES ( NULL, '{$this->getCategoria_id()}', '{$this->getNombre()}', '{$this->getDescripcion()}', '{$this->getPrecio()}', '{$this->getStock()}', null, CURDATE(), null);";
+      $sql="INSERT INTO productos ( id, categoria_id, nombre, descripcion, precio, stock, oferta, fecha, imagen ) 
+                VALUES ( NULL, 
+                        '{$this->getCategoria_id()}', 
+                        '{$this->getNombre()}', 
+                        '{$this->getDescripcion()}', 
+                        '{$this->getPrecio()}', 
+                        '{$this->getStock()}', 
+                        null, CURDATE(), 
+                        '{$this->getImagen()}' 
+                        );";
+                        
       $save = $this->db->query($sql);
   
     //   echo $this->db->error;

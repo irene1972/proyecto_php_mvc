@@ -6,3 +6,5 @@
 
 
 1. Nota: database inicial guardada en directorio database
+
+2. La contraseña para los usuarios de prueba es casi siempre: 1234
