@@ -9,15 +9,15 @@
     <textarea name="descripcion"></textarea>
 
     <label for="precio">Precio</label>
-    <input type="text" name="precio" />
+    <input type="number" name="precio" required />
 
     <label for="stock">Stock</label>
-    <input type="number" name="stock" />
+    <input type="number" name="stock" required />
 
     <label for="categoria">Categoria</label>
     <?php $categorias = Utils::showCategorias(); ?>
-    <select name="categoria" class="class-add-padding">
-      <option value="0">-- SELECCIONE CATEGORIA --</option>
+    <select name="categoria" class="class-add-padding" required>
+      <option value="">-- SELECCIONE CATEGORIA --</option>
       
       <?php while( $cat = $categorias->fetch_object()): ?>
         <option value="<?=$cat->id?>"><?=$cat->nombre?></option>
