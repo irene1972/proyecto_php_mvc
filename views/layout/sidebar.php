@@ -15,13 +15,15 @@
     <?php endif; ?>
     <ul>
       <?php if( isset($_SESSION['admin']) ): ?>
-        <li><a href="#">Gestionar Categorías</a></li>
+        <li><a href="<?=BASE_URL?>categoria/index">Gestionar Categorías</a></li>
         <li><a href="#">Gestionar Productos</a></li>
         <li><a href="#">Gestionar Pedidos</a></li>
       <?php endif; ?>
       <?php if( isset($_SESSION['identity']) ): ?>
         <li><a href="#">Mis Pedidos</a></li>
         <li><a href="<?=BASE_URL?>usuario/logout">Cerrar Sesión</a></li>
+      <?php else: ?>
+        <li><a href="<?=BASE_URL?>usuario/registro">Registrate aquí</a></li>
       <?php endif; ?>
     </ul>
   </div>

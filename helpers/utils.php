@@ -11,6 +11,15 @@
       return $name;
       
     }
+
+    public static function isAdmin(){
+      if( !isset($_SESSION['admin']) ){
+        header("Location:" . BASE_URL);
+      }else {
+        return true;
+      }
+    } 
+
   }
 
 ?>
