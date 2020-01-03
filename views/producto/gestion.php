@@ -9,6 +9,13 @@
 <?php endif; ?>
 <?php Utils::deleteSession('producto'); ?>
 
+<?php if( isset($_SESSION['delete']) && $_SESSION['delete'] == 'completed' ): ?>
+  <strong class="alert_green">El Producto se ha borrado correctamente</strong>
+<?php elseif ( isset( $_SESSION['delete']) && $_SESSION['delete'] == 'failed' ): ?>
+  <strong class="alert_red">El Producto NO se ha borrado correctamente</strong>
+<?php endif; ?>
+<?php Utils::deleteSession('delete'); ?>
+
 <table>
   <tr>
     <th>ID</th>
@@ -35,8 +42,8 @@
       <!-- <td>< ?=$prod->fecha?></td> -->
       <td>
         <!-- *Nota: muuuuy importante el parámetro id no va precedido por un interrogante sino por un & -->
-        <a href="#" class="button button-gestion">Editar</a>
-        <a href="#" class="button button-gestion button-red">Eliminar</a>
+        <a href="<?=BASE_URL?>producto/editar&id=<?=$prod->id?>" class="button button-gestion">Editar</a>
+        <a href="<?=BASE_URL?>producto/eliminar&id=<?=$prod->id?>" class="button button-gestion button-red">Eliminar</a>
       </td>
     </tr>
   <?php endwhile; ?>

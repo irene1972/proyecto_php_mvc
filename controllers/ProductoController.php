@@ -103,7 +103,28 @@
       public function eliminar(){
 
         Utils::isAdmin();
-        var_dump($_GET);
+        //var_dump($_GET);
+
+        if( isset( $_GET['id'] ) ){
+
+          $id = $_GET['id'];
+
+          $producto = new Producto();
+          $producto->setId($id);
+
+          $result_delete = $producto->delete();
+
+          if( $result_delete ){
+            $_SESSION['delete'] = "completed";
+          }else{
+            $_SESSION['delete'] = "failed";
+          }
+
+        }else{
+          $_SESSION['delete'] = "failed";
+        }
+
+        header("Location:" . BASE_URL . "producto/gestion");
 
       }
     

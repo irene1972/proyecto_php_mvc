@@ -133,7 +133,7 @@
                         null, CURDATE(), 
                         '{$this->getImagen()}' 
                         );";
-                        
+
       $save = $this->db->query($sql);
   
     //   echo $this->db->error;
@@ -147,6 +147,19 @@
       
       return $result;
   
+    }
+
+    public function delete(){
+        $sql = "DELETE FROM productos WHERE id = {$this->id};";
+        $delete = $this->db->query($sql);
+        
+        $result = false;
+  
+        if( $delete ){
+          $result = true;
+        }
+        
+        return $result;
     }
 
   }
