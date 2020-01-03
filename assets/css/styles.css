@@ -178,11 +178,17 @@ td{
 }
 
 /* FORMS */
+.form_container{
+  width: 50%;
+}
+
 label,
 input[type="text"], 
+input[type="number"], 
 input[type="password"], 
 input[type="email"], 
-select{
+select, 
+textarea{
   display: block;
   width: 95%;
   margin-top: 2px;
@@ -190,15 +196,24 @@ select{
 }
 
 input[type="text"], 
+input[type="number"], 
 input[type="password"], 
 input[type="email"], 
-select{
+select, 
+textarea{
   border-bottom: 2px solid #C9C9C9;
   box-shadow: 0px 0px 2px #CCC inset;
   background: white;
   padding: 2px;
   color: gray;
   transition: all 300ms;
+}
+
+input[type="text"]{
+  min-height: 25px;
+}
+label{
+  padding: 5px;
 }
 
 input[type="text"]:focus, 
@@ -243,6 +258,16 @@ input[type="submit"],
 button{
   display: block;
   margin-top: 10px;
+}
+
+.class-add-padding{
+  padding: 6px;
+}
+
+.button-prod{
+  margin-top: 22px !important;
+  padding: 8px 20px !important;
+  font-size: 17px;
 }
 
 /* CONTENIDO CENTRAL */
