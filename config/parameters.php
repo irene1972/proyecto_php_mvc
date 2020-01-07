@@ -4,4 +4,6 @@
   define("CONTROLLER_DEFAULT", "ProductoController");
   define("ACTION_DEFAULT", "index");
 
+  define( "NUM_RANDOM_PRODS", 6 );
+
 ?>

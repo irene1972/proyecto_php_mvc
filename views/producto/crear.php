@@ -33,9 +33,8 @@
     <label for="imagen">Imagen</label>
     <?php if( isset($prod) && is_object($prod) && !empty($prod->imagen) ): ?>
       <img src="<?=BASE_URL?>uploads/images/<?=$prod->imagen?>" class="thumb" /><br/>
-    <!-- < ?php else: ?> -->
-      <input type="file" name="imagen" />
     <?php endif; ?>
+    <input type="file" name="imagen" />
     
 
     <input type="submit" value="Guardar" class="button-prod" />

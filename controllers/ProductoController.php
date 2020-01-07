@@ -4,6 +4,10 @@
 
       public function index(){
         
+        $producto = new Producto();
+
+        $productos = $producto->getRandom( NUM_RANDOM_PRODS );
+
         //renderizar vista
         require_once 'views/producto/destacados.php';
       
@@ -100,29 +104,29 @@
 
       }
 
-      // public function editar(){
+      public function editar(){
 
-      //   Utils::isAdmin();
+        Utils::isAdmin();
 
-      //   if( isset( $_GET['id'] ) ){
+        if( isset( $_GET['id'] ) ){
           
-      //     $editar = true;
-      //     $id = $_GET['id'];
+          $editar = true;
+          $id = $_GET['id'];
 
-      //     $producto = new Producto();
-      //     $producto->setId($id);
+          $producto = new Producto();
+          $producto->setId($id);
 
-      //     $prod = $producto->getById();
+          $prod = $producto->getById();
 
-      //     require_once 'views/producto/crear.php';
+          require_once 'views/producto/crear.php';
 
-      //   }else{
+        }else{
 
-      //     header("Location:" . BASE_URL . "producto/gestion");
+          header("Location:" . BASE_URL . "producto/gestion");
 
-      //   }
+        }
 
-      // }
+      }
 
       public function eliminar(){
 
