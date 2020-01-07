@@ -18,7 +18,7 @@
         header( "Location: " . BASE_URL );
       }
 
-      if( $_SESSION['carrito'] ){
+      if( isset($_SESSION['carrito']) ){
 
         $counter = 0;
 

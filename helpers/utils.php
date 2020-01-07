@@ -27,6 +27,32 @@
       return $categorias;
     }
 
+    public static function estadisticasCarrito(){
+
+      $estadisticas = array(
+        'count' => 0,
+        'total' => 0
+      );
+
+      if( isset($_SESSION['carrito']) ){
+
+        $estadisticas['count'] = count( $_SESSION['carrito'] );
+
+        $cantidad = 0;
+
+        foreach( $_SESSION['carrito'] as $elemento ){
+          $prod = $elemento['producto'];
+          $cantidad += $elemento['unidades'] * $prod->precio;
+        }
+
+        $estadisticas['total'] = $cantidad;
+
+      }
+
+      return $estadisticas;
+
+    }
+
   }
 
 ?>
