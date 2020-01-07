@@ -1,6 +1,6 @@
 <?php if( isset($editar) && isset($prod) && is_object($prod) ): ?>
   <h1>Editar producto: <?=$prod->nombre?></h1>
-  <?php $url_action = BASE_URL . "producto/edit&id=$prod->id"; ?>
+  <?php $url_action = BASE_URL . "producto/save&id=$prod->id"; ?>
 <?php else: ?>
   <h1>Crear nuevo producto</h1>
   <?php $url_action = BASE_URL . "producto/save"; ?>

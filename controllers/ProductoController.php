@@ -65,7 +65,13 @@
 
             }
 
-            $result_save = $producto->save();
+            if( isset( $_GET['id'] ) ){
+              $id = $_GET['id'];
+              $producto->setId($id);
+              $result_save = $producto->edit();
+            }else{
+              $result_save = $producto->save();
+            }
             
             if( $result_save ){
               $_SESSION['producto'] = "completed";
@@ -94,30 +100,29 @@
 
       }
 
-      public function editar(){
+      // public function editar(){
 
-        Utils::isAdmin();
-        //var_dump($_GET);
+      //   Utils::isAdmin();
 
-        if( isset( $_GET['id'] ) ){
+      //   if( isset( $_GET['id'] ) ){
           
-          $editar = true;
-          $id = $_GET['id'];
+      //     $editar = true;
+      //     $id = $_GET['id'];
 
-          $producto = new Producto();
-          $producto->setId($id);
+      //     $producto = new Producto();
+      //     $producto->setId($id);
 
-          $prod = $producto->getById();
+      //     $prod = $producto->getById();
 
-          require_once 'views/producto/crear.php';
+      //     require_once 'views/producto/crear.php';
 
-        }else{
+      //   }else{
 
-          header("Location:" . BASE_URL . "producto/gestion");
+      //     header("Location:" . BASE_URL . "producto/gestion");
 
-        }
+      //   }
 
-      }
+      // }
 
       public function eliminar(){
 
