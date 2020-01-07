@@ -97,7 +97,26 @@
       public function editar(){
 
         Utils::isAdmin();
-        var_dump($_GET);
+        //var_dump($_GET);
+
+        if( isset( $_GET['id'] ) ){
+          
+          $editar = true;
+          $id = $_GET['id'];
+
+          $producto = new Producto();
+          $producto->setId($id);
+
+          $prod = $producto->getById();
+
+          require_once 'views/producto/crear.php';
+
+        }else{
+
+          header("Location:" . BASE_URL . "producto/gestion");
+
+        }
+
       }
 
       public function eliminar(){

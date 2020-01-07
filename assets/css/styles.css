@@ -41,6 +41,10 @@ td{
   padding: 2px;
 }
 
+.thumb{
+  width: 100px;
+}
+
 /* CONTAINER */
 #container {
   width: 80%;

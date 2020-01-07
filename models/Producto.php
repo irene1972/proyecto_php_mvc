@@ -121,6 +121,11 @@
       return $productos;
     }
 
+    public function getById(){
+        $producto = $this->db->query("SELECT * FROM productos WHERE id = {$this->getId()};");
+        return $producto->fetch_object();
+      }
+
     public function save(){
       
       $sql="INSERT INTO productos ( id, categoria_id, nombre, descripcion, precio, stock, oferta, fecha, imagen ) 
