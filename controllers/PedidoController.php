@@ -117,6 +117,21 @@ class PedidoController{
 
   }
 
+  public function gestion(){
+    
+    Utils::isAdmin();
+
+    $gestion = true;
+
+    $pedido = new Pedido();
+
+    // Extraemos todos los pedidos
+    $pedidos = $pedido->getAll();
+
+    require_once 'views/pedido/mis_pedidos.php';
+
+  }
+
 }
 
 ?>
