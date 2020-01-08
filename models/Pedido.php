@@ -144,6 +144,32 @@
   
     }
 
+    public function save_linea( $carrito ){
+
+      $sql = "SELECT LAST_INSERT_ID() AS 'pedido';";
+      $query = $this->db->query($sql);
+      $pedido_id = $query->fetch_object()->pedido;
+
+      foreach( $carrito as $elemento ){
+
+          $unidades = $elemento['unidades'];
+          $prod_id = $elemento['producto']->id;
+
+          $insert="INSERT INTO lineas_pedidos VALUES ( NULL, {$pedido_id}, {$prod_id}, {$unidades} )";
+          $save = $query = $this->db->query($insert);
+
+        }
+        
+        $result = false;
+  
+        if( $save ){
+          $result = true;
+        }
+        
+        return $result;
+  
+    }
+
   }
 
 ?>

@@ -9,15 +9,12 @@ class PedidoController{
   }
 
   public function add(){
-    
-    //var_dump($_POST);
-    echo "Pedido Realizado!!";
 
     if( isset($_SESSION['identity']) ){
       if( isset( $_SESSION['carrito'] ) && isset($_POST['provincia']) && isset($_POST['localidad']) && isset($_POST['direccion']) ){
 
         $identity = $_SESSION['identity'];
-
+        $carrito = $_SESSION['carrito'];
         $user_id = $identity->id;
 
         $provincia = $_POST['provincia'];
@@ -38,7 +35,10 @@ class PedidoController{
 
         $save = $pedido->save();
 
-        if( $save ){
+        //Guardar linea pedido
+        $save_lineas = $pedido->save_linea($carrito);
+
+        if( $save && $save_lineas ){
           $_SESSION["pedido"] = "completed";
         }else{
           $_SESSION["pedido"] = "failed";
@@ -46,13 +46,18 @@ class PedidoController{
 
       }else{
         $_SESSION["pedido"] = "failed";
-        header( "Location:" . BASE_URL );
       }
+
+      header( "Location:" . BASE_URL . "pedido/confirmado" );
+    
     }else{
-      $_SESSION["pedido"] = "failed";
       header( "Location:" . BASE_URL );
     }
 
+  }
+
+  public function confirmado(){
+    require_once 'views/pedido/confirmado.php';
   }
 
 }

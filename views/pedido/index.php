@@ -1,5 +1,6 @@
 
 <?php if( isset($_SESSION['identity']) ): ?>
+<?php if( isset($_SESSION['pedido']) ) Utils::deleteSession('pedido'); ?>
 
   <h1>Hacer pedido</h1>
   <p><a href="<?=BASE_URL?>carrito/index">Ver los productos y el precio del pedido</a></p><br/>
