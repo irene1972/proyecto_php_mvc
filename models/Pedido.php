@@ -116,7 +116,32 @@
     public function getById(){
         $pedidos = $this->db->query("SELECT * FROM pedidos WHERE id = {$this->getId()};");
         return $pedidos->fetch_object();
-      }
+    }
+
+    public function getOneByUser(){
+      
+      $sql = "SELECT pe.id as num_pedido, pe.coste as coste  " 
+              . " FROM pedidos pe "
+              . " WHERE pe.usuario_id = {$this->getUsuario_id()} " 
+              . " ORDER BY pe.id DESC " 
+              . " LIMIT 1;";
+      
+      $pedido = $this->db->query($sql);
+      
+      return $pedido->fetch_object();
+
+    }
+
+    public function getProductosByPedido(){
+      $sql = "SELECT lp.producto_id, lp.unidades, pr.* "
+                . " FROM lineas_pedidos lp "
+                . " INNER JOIN productos pr ON pr.id=lp.producto_id "
+                . " WHERE lp.pedido_id = {$this->getId()};";
+
+      $productos = $this->db->query($sql);
+      return $productos;
+      
+    }
 
     public function save(){
       
@@ -159,7 +184,7 @@
           $save = $query = $this->db->query($insert);
 
         }
-        
+
         $result = false;
   
         if( $save ){
