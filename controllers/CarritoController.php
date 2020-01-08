@@ -4,7 +4,10 @@
    
     public function index(){
 
-      $carrito = $_SESSION['carrito'] ;
+      $carrito = [];
+      if( isset( $_SESSION['carrito'] ) ){
+        $carrito = $_SESSION['carrito'] ;
+      }
 
       require_once "views/carrito/index.php";
       
