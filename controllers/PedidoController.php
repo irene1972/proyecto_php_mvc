@@ -3,7 +3,11 @@
 class PedidoController{
 
   public function index(){
-    echo "Controlador Pedidos, Acción index";
+    require_once 'views/pedido/index.php';
+  }
+
+  public function add(){
+    echo "Controlador Pedidos, Acción Add";
   }
 
 }
