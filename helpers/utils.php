@@ -20,6 +20,14 @@
       }
     }
 
+    public static function isIdentity(){
+      if( !isset($_SESSION['identity']) ){
+        header("Location:" . BASE_URL);
+      }else {
+        return $_SESSION['identity']->id;
+      }
+    }
+
     public static function showCategorias(){
       require_once 'models/Categoria.php';
       $categoria = new Categoria();

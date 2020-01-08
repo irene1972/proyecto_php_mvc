@@ -131,6 +131,19 @@
       return $pedido->fetch_object();
 
     }
+    
+    public function getAllByUser(){
+      
+      $sql = "SELECT pe.*  " 
+              . " FROM pedidos pe "
+              . " WHERE pe.usuario_id = {$this->getUsuario_id()} " 
+              . " ORDER BY pe.id DESC;";
+      
+      $pedidos = $this->db->query($sql);
+      
+      return $pedidos;
+
+    }
 
     public function getProductosByPedido(){
       $sql = "SELECT lp.producto_id, lp.unidades, pr.* "
