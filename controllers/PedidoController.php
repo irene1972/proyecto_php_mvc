@@ -1,5 +1,5 @@
 <?php
-
+//require_once 'models/Pedido.php';
 class PedidoController{
 
   public function index(){
@@ -7,7 +7,9 @@ class PedidoController{
   }
 
   public function add(){
-    echo "Controlador Pedidos, Acción Add";
+    
+    var_dump($_POST);
+
   }
 
 }
