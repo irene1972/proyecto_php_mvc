@@ -93,6 +93,30 @@ class PedidoController{
 
   }
 
+  public function detalle(){
+    
+    Utils::isIdentity();
+    
+    if( isset($_GET['id']) ){
+      $id = $_GET['id'];
+
+      $pedido = new Pedido();
+
+      $pedido->setId( $id );
+      
+      $ped = $pedido->getById();
+      $prods = $pedido->getProductosByPedido();
+      
+    }else{
+
+      header("Location:" . BASE_URL . "pedido/mis_pedidos");
+
+    }
+
+    require_once 'views/pedido/detalle.php';
+
+  }
+
 }
 
 ?>
