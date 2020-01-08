@@ -31,5 +31,5 @@
 <br/>
 <div class="total-carrito">
   <h3>Precio total: <?=$estadisticas['total']?> €</h3>
-  <a href="#" class="button button-pedido">Hacer pedido</a>
+  <a href="<?=BASE_URL?>pedido/index" class="button button-pedido">Hacer pedido</a>
 </div>
