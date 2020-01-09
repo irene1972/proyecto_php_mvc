@@ -7,8 +7,14 @@ class CategoriaController{
 
   public function index(){
     Utils::isAdmin();
+
+    $order = 'id';
+    
+    if( isset($_GET['order']) )
+          $order = $_GET['order'];
+
     $categoria = new Categoria();
-    $categorias = $categoria->getAll();
+    $categorias = $categoria->getAll( $order );
 
     require_once 'views/categoria/index.php';
   

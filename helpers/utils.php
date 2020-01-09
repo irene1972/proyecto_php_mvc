@@ -30,8 +30,9 @@
 
     public static function showCategorias(){
       require_once 'models/Categoria.php';
+      $order = 'id';
       $categoria = new Categoria();
-      $categorias = $categoria->getAll();
+      $categorias = $categoria->getAll( $order );
       return $categorias;
     }
 
