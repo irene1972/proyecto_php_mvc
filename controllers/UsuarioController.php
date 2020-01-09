@@ -95,6 +95,24 @@ class UsuarioController{
 
   }
 
+  public function detalle(){
+
+    Utils::isAdmin();
+
+    if( isset($_GET['id']) ){
+
+      $id = $_GET['id'];
+      $user = new Usuario();
+      $user->setId($id);
+
+      $usuario = $user->getById();
+
+    }
+
+    require_once 'views/usuario/detalle.php';
+
+  }
+
 }
 
 ?>

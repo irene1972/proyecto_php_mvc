@@ -126,7 +126,7 @@ class PedidoController{
     $pedido = new Pedido();
 
     // Extraemos todos los pedidos
-    $pedidos = $pedido->getAll();
+    $pedidos = $pedido->getAllAndUsersNames();
 
     require_once 'views/pedido/mis_pedidos.php';
 

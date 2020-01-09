@@ -113,6 +113,18 @@
       return $pedidos;
     }
 
+    public function getAllAndUsersNames(){
+
+      $sql = "SELECT pe.*, us.nombre, us.apellidos " .
+            " FROM pedidos pe " .
+            " INNER JOIN usuarios us ON pe.usuario_id=us.id " . 
+            " ORDER BY pe.id DESC;";
+
+      $pedidos = $this->db->query($sql);
+      return $pedidos;
+
+    }
+
     public function getById(){
         $pedidos = $this->db->query("SELECT * FROM pedidos WHERE id = {$this->getId()};");
         return $pedidos->fetch_object();

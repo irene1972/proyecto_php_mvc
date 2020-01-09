@@ -126,6 +126,24 @@
         return $result;
     }
 
+    public function getAll(){
+
+        $sql = "SELECT * FROM usuarios;";
+        $query = $this->db->query($sql);
+
+        return $query;
+
+    }
+
+    public function getById(){
+
+        $sql = "SELECT * FROM usuarios WHERE id = {$this->getId()};";
+        $query = $this->db->query($sql);
+
+        return $query->fetch_object();
+
+    }
+
   }
 
 ?>

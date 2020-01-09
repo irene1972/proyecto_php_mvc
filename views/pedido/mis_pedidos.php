@@ -22,7 +22,7 @@
       <tr>
         <td><a href="<?=BASE_URL?>pedido/detalle&id=<?=$pedido->id?>"><?=$pedido->id?></a></td>
         <?php if( isset($gestion) && $gestion ): ?>
-          <td><a href="#"><?=$pedido->usuario_id?></a></td><!--< ?=BASE_URL?>usuario/detalle&id=< ?=$pedido->usuario_id?>-->
+          <td><a href="<?=BASE_URL?>usuario/detalle&id=<?=$pedido->usuario_id?>"><?=$pedido->nombre?> <?=$pedido->apellidos?></a></td>
         <?php endif; ?>
         <td><?=$pedido->coste?> €</td>
         <td><?=$pedido->fecha?></td>
