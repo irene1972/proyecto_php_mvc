@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/Pedido.php';
+require_once 'models/Usuario.php';
 
 class PedidoController{
 
@@ -106,6 +107,11 @@ class PedidoController{
       
       $ped = $pedido->getById();
       $prods = $pedido->getProductosByPedido();
+
+      $usuario = new Usuario();
+      $usuario->setId($ped->usuario_id);
+      $user = $usuario->getById();
+
       
     }else{
 

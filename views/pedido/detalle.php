@@ -16,6 +16,17 @@
     </form><br/>
   <?php endif; ?>
 
+  <?php if( isset($_SESSION['admin']) && isset($user) ): ?>
+    <h3>Datos del cliente:</h3>
+      Id: <?=$user->id?><br/>
+      Nombre: <?=$user->nombre?><br/>
+      Apellidos: <?=$user->apellidos?><br/>
+      Email: <?=$user->email?><br/>
+      Password: **********<br/>
+      Rol: <?=$user->rol?><br/>
+      Ruta imagen: <?=$user->imagen?><br/><br/>
+  <?php endif; ?>
+
   <h3>Direccion de envío:</h3>
     Dirección: <?=$ped->direccion?><br/>
     Ciudad: <?=$ped->localidad?><br/>
