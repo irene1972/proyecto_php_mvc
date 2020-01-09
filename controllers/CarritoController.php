@@ -56,18 +56,46 @@
 
     public function delete(){
       if( isset($_GET['index']) ){
+
         $index = $_GET['index'];
         unset( $_SESSION['carrito'][$index] );
+
         header("Location: " . BASE_URL . "carrito/index");
+
       }else{
         //Gestionar error
-        echo "ERROR";
+        //echo "ERROR";
       }
     }
 
     public function delete_session(){
       unset( $_SESSION['carrito'] );
       header("Location: " . BASE_URL . "carrito/index");
+    }
+
+    public function up(){
+      if( isset($_GET['index']) ){
+
+        $index = $_GET['index'];
+        $_SESSION['carrito'][$index]['unidades']++;
+
+        header("Location: " . BASE_URL . "carrito/index");
+
+      }
+    }
+
+    public function down(){
+      if( isset($_GET['index']) ){
+
+        $index = $_GET['index'];
+        $_SESSION['carrito'][$index]['unidades']--;
+
+        if( $_SESSION['carrito'][$index]['unidades'] == 0 )
+          unset( $_SESSION['carrito'][$index] );
+
+        header("Location: " . BASE_URL . "carrito/index");
+
+      }
     }
 
   }

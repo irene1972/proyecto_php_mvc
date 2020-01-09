@@ -430,3 +430,16 @@ button{
   width: 70px;
   margin: 0px auto;
 }
+
+.updown-unidades{
+  width: 80px;
+  margin: 0 auto;
+}
+
+.updown-unidades .button{
+  display: block;
+  width: 20px;
+  float: left;
+  padding: 2px;
+  margin-left: 10px;
+}
