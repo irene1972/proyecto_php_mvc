@@ -117,13 +117,16 @@
         Utils::isAdmin();
 
         $flag_editar = false;
+        $order = 'id';
         
-        if( isset($_GET['edit']) && $_GET['edit'] == '1' ){
+        if( isset($_GET['edit']) && $_GET['edit'] == '1' )
           $flag_editar = true;
-        }
+
+        if( isset($_GET['order']) )
+          $order = $_GET['order'];
 
         $producto = new Producto();
-        $productos = $producto->getAll();
+        $productos = $producto->getAll( $order );
 
         require_once 'views/producto/gestion.php';
 

@@ -41,6 +41,16 @@ td{
   padding: 2px;
 }
 
+tr.tr-order{
+  height: 30px;
+}
+
+a.order{
+  color: black;
+  text-decoration: none;
+
+}
+
 .thumb{
   width: 100px;
 }

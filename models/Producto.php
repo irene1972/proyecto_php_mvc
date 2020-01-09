@@ -116,8 +116,10 @@
   
     }
 
-    public function getAll(){
-      $productos = $this->db->query("SELECT * FROM productos ORDER BY id DESC;");
+    public function getAll( $order ){
+      $sql = "SELECT * FROM productos ";
+      $sql .= " ORDER BY {$order};";
+      $productos = $this->db->query($sql);
       return $productos;
     }
 

@@ -30,13 +30,13 @@
 <?php Utils::deleteSession('delete'); ?>
 
 <table>
-  <tr>
-    <th>ID</th>
+  <tr class="tr-order">
+    <th><a href="<?=BASE_URL?>producto/gestion&order=id" class="order">ID</a></th>
     <!-- <th>CATEGORIA_ID</th> -->
-    <th>NOMBRE</th>
+    <th><a href="<?=BASE_URL?>producto/gestion&order=nombre" class="order">NOMBRE</a></th>
     <!-- <th>DESCRIPCIÓN</th> -->
-    <th>PRECIO</th>
-    <th>STOCK</th>
+    <th><a href="<?=BASE_URL?>producto/gestion&order=precio" class="order">PRECIO</a></th>
+    <th><a href="<?=BASE_URL?>producto/gestion&order=stock" class="order">STOCK</a></th>
     <!-- <th>OFERTA</th> -->
     <!-- <th>IMAGEN</th> -->
     <!-- <th>FECHA</th> -->
