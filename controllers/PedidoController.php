@@ -41,6 +41,8 @@ class PedidoController{
 
         if( $save && $save_lineas ){
           $_SESSION["pedido"] = "completed";
+          unset( $_SESSION['carrito'] );
+
         }else{
           $_SESSION["pedido"] = "failed";
         }

@@ -205,14 +205,20 @@
           $unidades = $elemento['unidades'];
           $prod_id = $elemento['producto']->id;
 
+          // Actualizar la tabla lineas_pedidos
           $insert="INSERT INTO lineas_pedidos VALUES ( NULL, {$pedido_id}, {$prod_id}, {$unidades} )";
           $save = $query = $this->db->query($insert);
+
+          
+          // Restar del stock los productos
+          $update_stock = "UPDATE productos SET stock = ((SELECT stock FROM productos WHERE id = {$prod_id}) - {$unidades}) WHERE id = {$prod_id};";
+          $update = $query = $this->db->query($update_stock);
 
         }
 
         $result = false;
   
-        if( $save ){
+        if( $save && $update ){
           $result = true;
         }
         
