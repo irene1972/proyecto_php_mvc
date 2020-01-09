@@ -26,7 +26,7 @@
             <?php if( $producto->imagen != null ): ?>  
               <img src="<?=BASE_URL?>uploads/images/<?=$producto->imagen?>" alt="" class="img-carrito" />
             <?php else: ?>
-              <img src="<?=BASE_URL?>assets/img/camiseta.png" alt="" class="img-carrito" />
+              <img src="<?=BASE_URL?>assets/img/sin_imagen.png" alt="" class="img-carrito" />
             <?php endif; ?>
           </td>
           <td><a href="<?=BASE_URL?>producto/ver&id=<?=$producto->id?>"><?=$producto->nombre?></a></td>

@@ -9,7 +9,7 @@
 <div class="form_container">
   <form action="<?=$url_action?>" method="post" enctype="multipart/form-data">
     <label for="nombre">*Nombre</label>
-    <input type="text" name="nombre" value="<?= (isset($prod) && is_object($prod)) ? $prod->nombre : '' ?>" required />
+    <input type="text" name="nombre"  maxlength="20" value="<?= (isset($prod) && is_object($prod)) ? $prod->nombre : '' ?>" required />
 
     <label for="descripcion">Descripción</label>
     <textarea name="descripcion"><?= (isset($prod) && is_object($prod)) ? $prod->descripcion : '' ?></textarea>

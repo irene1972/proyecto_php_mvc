@@ -13,9 +13,9 @@
     <!-- CABECERA -->
     <header id="header">
       <div id="logo">
-        <img src="<?=BASE_URL?>assets/img/camiseta.png" alt="Camiseta Logo">
+        <img src="<?=BASE_URL?>assets/img/logo.png" alt="Artesania Logo">
         <a href="<?=BASE_URL?>">
-          Tienda de camisetas
+          Tienda de Artesanía
         </a>
       </div>
     </header>

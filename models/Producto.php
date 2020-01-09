@@ -127,8 +127,8 @@
       $sql="SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
             ." INNER JOIN categorias c ON p.categoria_id = c.id "
             ." WHERE p.categoria_id = {$this->getCategoria_id()} AND stock > 0 " 
-            . " ORDER BY p.id DESC;";
-      //echo $sql;
+            . " ORDER BY p.id;";
+      
       $productos = $this->db->query($sql);
       return $productos;
     }
