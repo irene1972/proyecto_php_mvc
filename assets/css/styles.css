@@ -398,6 +398,17 @@ button{
 }
 
 /* CARRITO */
+.delete-carrito{
+  width: 315px;
+  float: left;
+}
+
+.button-delete{
+  display: block;
+  float: left;
+  width: 100px;
+}
+
 .total-carrito{
   width: 315px;
   float: right;
@@ -413,4 +424,9 @@ button{
   display: block;
   float: right;
   width: 100px;
+}
+
+.button-carrito{
+  width: 70px;
+  margin: 0px auto;
 }

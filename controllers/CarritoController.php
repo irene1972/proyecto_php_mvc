@@ -54,8 +54,15 @@
 
     }
 
-    public function remove(){
-      
+    public function delete(){
+      if( isset($_GET['index']) ){
+        $index = $_GET['index'];
+        unset( $_SESSION['carrito'][$index] );
+        header("Location: " . BASE_URL . "carrito/index");
+      }else{
+        //Gestionar error
+        echo "ERROR";
+      }
     }
 
     public function delete_session(){
