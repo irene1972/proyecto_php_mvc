@@ -27,7 +27,7 @@
         <td><?=$pedido->coste?> €</td>
         <td><?=$pedido->fecha?></td>
         <?php if( isset($gestion) && $gestion ): ?>
-          <td><?=$pedido->estado?></td>
+          <td><?=Utils::showStatus($pedido->estado)?></td>
         <?php endif; ?>
       </tr>
     <?php endwhile;?>

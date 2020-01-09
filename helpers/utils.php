@@ -61,6 +61,29 @@
 
     }
 
+    public static function showStatus( $status ){
+
+      switch( $status ){
+        case 'confirm':
+          $value = 'Pendiente';
+          break;
+        case 'preparation':
+          $value = 'En preparación';
+          break;
+        case 'ready':
+          $value = 'Preparado para enviar';
+          break;
+        case 'sended':
+          $value = 'Enviado';
+          break;
+        default:
+          $value = false;
+      }
+
+      if($value)
+        return $value;
+    }
+
   }
 
 ?>

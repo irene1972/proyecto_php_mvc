@@ -132,6 +132,39 @@ class PedidoController{
 
   }
 
+  public function estado(){
+    
+    Utils::isAdmin();
+
+    if( isset($_POST['pedido_id']) && isset($_POST['estado']) ){
+
+      if( isset($_POST['old_status']) && ( $_POST['old_status'] != $_POST['estado'] ) ){
+        $pedido_id = $_POST['pedido_id'];
+        $newStatus = $_POST['estado'];
+  
+        $pedido = new Pedido();
+  
+        $pedido->setId($pedido_id);
+        $pedido->setEstado($newStatus);
+        $change = $pedido->updateStatusById();
+  
+        if( $change ){
+          header("Location:" . BASE_URL . "pedido/detalle&id=" . $pedido_id);
+        }else{
+          //gestionar error
+          echo "ERROR!!";
+        }
+      }else{
+        $pedido_id = $_POST['pedido_id'];
+        header("Location:" . BASE_URL . "pedido/detalle&id=" . $pedido_id);
+      }
+
+    }else{
+      header("Location:" . BASE_URL);
+    }
+   
+  }
+
 }
 
 ?>
