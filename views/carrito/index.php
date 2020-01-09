@@ -1,4 +1,10 @@
 <h1>Carrito de la compra</h1>
+
+<?php if ( isset( $_SESSION['stock']) && $_SESSION['stock'] == 'failed' ): ?>
+  <strong class="alert_red">Lo sentimos. NO hay más stock de este producto</strong>
+<?php endif; ?>
+<?php Utils::deleteSession('stock'); ?>
+
   <?php if( isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0 ): ?>
 
     <table>

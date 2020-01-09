@@ -77,7 +77,25 @@
       if( isset($_GET['index']) ){
 
         $index = $_GET['index'];
-        $_SESSION['carrito'][$index]['unidades']++;
+
+        // Hacemos validación por cada click ¿continúa habiendo stock?
+        $producto_id = $_SESSION['carrito'][$index]['id_producto'];
+        $unidades_a_comprar_tras_click = ($_SESSION['carrito'][$index]['unidades']) + 1;
+
+        $producto = new Producto();
+
+        $producto->setId($producto_id);
+        $prod = $producto->getById();
+        
+        $stock = $prod->stock;
+
+        if( $stock >= $unidades_a_comprar_tras_click ){
+          $_SESSION['carrito'][$index]['unidades']++;
+          $_SESSION['stock'] = 'completed';
+        }
+        else {
+          $_SESSION['stock'] = 'failed';
+        }
 
         header("Location: " . BASE_URL . "carrito/index");
 
