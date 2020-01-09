@@ -171,7 +171,7 @@
 
     public function edit(){
         //( id, categoria_id, nombre, descripcion, precio, stock, oferta, fecha, imagen ) 
-        $sql .= "UPDATE productos SET  nombre = '{$this->getNombre()}', 
+        $sql = "UPDATE productos SET  nombre = '{$this->getNombre()}', 
                                     descripcion = '{$this->getDescripcion()}', 
                                     precio = '{$this->getPrecio()}', 
                                     stock = '{$this->getStock()}',

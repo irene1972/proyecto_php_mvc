@@ -42,7 +42,8 @@
           if( isset($_POST['nombre']) && strlen($_POST['nombre']) > 0 && isset($_POST['categoria']) && isset($_POST['precio']) && isset($_POST['stock']) ){
       
             //var_dump($_POST);
-            
+            $flag_editar = false;
+
             $producto = new Producto();
 
             // CAMPOS OBLIGATORIOS
@@ -89,6 +90,7 @@
               $id = $_GET['id'];
               $producto->setId($id);
               $result_save = $producto->edit();
+              $flag_editar = true;
             }else{
               $result_save = $producto->save();
             }
@@ -105,13 +107,20 @@
           $_SESSION['producto'] = "failed";
         }
 
-        header("Location:" . BASE_URL. "producto/gestion");
+        $param = ( $flag_editar ) ? "&edit=" . $flag_editar : "";
+        header("Location:" . BASE_URL. "producto/gestion" . $param);
     
       }
 
       public function gestion(){
 
         Utils::isAdmin();
+
+        $flag_editar = false;
+        
+        if( isset($_GET['edit']) && $_GET['edit'] == '1' ){
+          $flag_editar = true;
+        }
 
         $producto = new Producto();
         $productos = $producto->getAll();
