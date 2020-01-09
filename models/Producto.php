@@ -126,7 +126,7 @@
     public function getAllByCategory(){
       $sql="SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
             ." INNER JOIN categorias c ON p.categoria_id = c.id "
-            ." WHERE p.categoria_id = {$this->getCategoria_id()} " 
+            ." WHERE p.categoria_id = {$this->getCategoria_id()} AND stock > 0 " 
             . " ORDER BY p.id DESC;";
       //echo $sql;
       $productos = $this->db->query($sql);
@@ -134,7 +134,7 @@
     }
 
     public function getRandom( $limit ){
-        $productos = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit;");
+        $productos = $this->db->query("SELECT * FROM productos WHERE stock > 0 ORDER BY RAND() LIMIT $limit;");
         return $productos;
       }
 
